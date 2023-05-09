@@ -1,6 +1,7 @@
 ﻿// Pelaez, Loise Jordan I. 
 // BSCPE 1-1
-// Ver 1
+/* A streaming service that allows people 
+to watch movies on an internet-connected device. */
 
 using System;
 namespace MyFlixProgram 
