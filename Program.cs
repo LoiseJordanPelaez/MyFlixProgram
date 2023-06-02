@@ -4,256 +4,144 @@
 to watch movies on an internet-connected device. */
 
 using System;
-namespace MyFlixProgram 
+
+namespace MyFlixProgram
 {
-class Program
-{
-    static void Main (string[] args)
-  {
-      System.Console.WriteLine ("MYFLIX");
-      System.Console.WriteLine ();
-      System.Console.WriteLine ("Welcome to Myflix!");
-      System.Console.WriteLine ("Profile A.");
-      System.Console.WriteLine ("Profile B.");
-      System.Console.WriteLine ("Profile C.");
-      System.Console.WriteLine ("Profile D.");
-      System.Console.WriteLine ("Please enter your profile number:");
-      System.Console.WriteLine ();
-
-      string? profileInput = Console.ReadLine();
-
-    string? genreInput;
-
-    while (profileInput != "A")
+    class Program
     {
-      System.Console.WriteLine("Invalid profile. Please enter again.");
-      profileInput = Console.ReadLine();
-      System.Console.WriteLine();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("MYFLIX");
+            Console.WriteLine();
+            Console.WriteLine("Welcome to Myddflix!");
+            Console.WriteLine("Profile A.");
+            Console.WriteLine("Profile B.");
+            Console.WriteLine("Profile C.");
+            Console.WriteLine("Profile D.");
+            Console.WriteLine("Please enter your profile number:");
+            Console.WriteLine();
 
+            string? profileInput = Console.ReadLine();
+
+            string? genreInput;
+
+            while (profileInput != "A" && profileInput != "B" && profileInput != "C" && profileInput != "D")
+            {
+                Console.WriteLine("Invalid profile. Please enter again.");
+                profileInput = Console.ReadLine();
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Welcome to profile " + profileInput + "!");
+            Console.WriteLine("");
+            DisplayGenres();
+
+            genreInput = Console.ReadLine();
+            Console.WriteLine();
+
+            switch (genreInput)
+            {
+ 
+                case "1":
+                    DisplayMovies("ROMANCE MOVIES", new string[] { "Titanic", "Twilight", "Ghosted", "13 Going on 30" }, new string[]
+                    {
+                        "Rose DeWitt Bukater informs the narrative of her own life aboard the Titanic, 8-4 years later. A young Rose boards the boat with fiancé and her mother. Meanwhile, the Jack Dawson and Fabrizio De Rossi win tickets aboard the boat. Rose informs the story from the departure of Titanic to its death--on its first and last voyage--on April 15, 1912.",
+                        "When Bella Swan proceeds to a little town in the Pacific Northwest to live with her father, she meets the Edward Cullen. Despite the perennial warnings of Edward, Bella can't help but love him, if a coven of blood suckers make an effort to challenge the Cullen clan, a move that ignites her life.",
+                        "Salt-of-the-earth Cole falls head over heels for enigmatic Sadie — but then makes the shocking discovery that she’s a secret agent. Before they can decide on a second date, Cole and Sadie are swept away on an international adventure to save the world.",
+                        "After total embarrassment at her birthday party, Jenna Rink would like to hide until she has thirty. Her wish is allowed, however as it happens that being half isn't as consistently as magnificent as she thought it would be!"
+                    });
+                    break;
+
+                case "2":
+                    DisplayMovies("ACTION MOVIES", new string[] { "Avengers: Endgame", "Justice League", "Fast and Furious X", "Uncharted" }, new string[]
+                    {
+                        "The universe Remains due to Their Mad Titan, Thanos' efforts. With the aid of allies that are remaining, the Avengers must build to undo Thanos' actions and restore order to the world once and for all.",
+                        "Fuelled by his Revived faith in Humankind and inspired by Superman's selfless Action, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to Handle the catastrophic Risk of Steppenwolf and the Parademons Who're on the hunt for Just Three Mother Boxes Around Earth.",
+                        "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
+                        "A young street-smart, Nathan Drake and also his wisecracking partner Victor Sullivan start a dangerous search of the best treasure never found while additionally tracking hints that might cause Nathan's long-lost bro."
+                    });
+                    break;
+
+                case "3":
+                    DisplayMovies("HORROR MOVIES", new string[] { "Insidious", "The Conjuring", "The Exorcist", "The Texas Chainsaw Massacre" }, new string[]
+                    {
+                        "A family discovers that their home has been invaded by spirits after their son inexplicably falls into an infinite sleep. They learn things are far more personal than they thought Once they reach out to a professional for assistance.",
+                        "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by way of a presence in their own farm house. The Warrens are trapped in the terrifying case of his or her lifetimes.",
+                        "Father Gabriele Amorth, Chief Exorcist of the Vatican, investigates a young boy's terrifying possession and ends up uncovering a centuries-old conspiracy the Vatican has desperately tried to keep hidden.",
+                        "After nearly 50 years of hiding, Leatherface returns to terrorize a group of optimistic young close friends who mistakenly disrupt his very carefully secured world in a remote Texas community."
+                    });
+                    break;
+
+                case "4":
+                    DisplayMovies("SCIENCE FICTION MOVIES", new string[] { "Pixels", "Power Rangers", "Spiderman: No Way Home", "The Adam Project" }, new string[]
+                    {
+                        "Game pros are recruited by the military to fight game characters that have attacked newyork.",
+                        "Saban's Power Rangers follows five teens who has to become something outstanding whenever they learn that their town of Angel Grove -- and the entire world -- is still on the point to be calmed by an alien threat. Our heroes quickly detect they are the only ones who are able to save the planet. But they might need to over come their issues that are real-life and before it's too late, ring collectively since the Power Rangers to accomplish this.",
+                        "Peter Parker is uncovered and no more able to separate his typical life from the high-stakes of being a super-hero. When he requests assistance from Physician Strange the risks come to be much more unsafe, forcing him to find what it truly means to be Spider-Man.",
+                        "After mistakenly crash-landing in 2022, time-traveling competitor pilot Adam Reed teams up with his 12-year-old self on an objective to conserve the future."
+                    });
+                    break;
+
+                default:
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid input. Please try again.");
+                    break;
+            }
+        }
+
+        static void DisplayGenres()
+        {
+            Console.WriteLine("MOVIE GENRES:");
+            Console.WriteLine("1. Romance");
+            Console.WriteLine("2. Action");
+            Console.WriteLine("3. Horror");
+            Console.WriteLine("4. Science Fiction");
+            Console.WriteLine();
+            Console.WriteLine("Select your chosen movie genre:");
+        }
+
+        static void DisplayMovies(string genre, string[] movies, string[] synopses)
+        {
+            Console.WriteLine(genre + ":");
+            for (int i = 0; i < movies.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + movies[i]);
+            }
+            Console.WriteLine("5. Return to Main Menu");
+            Console.WriteLine();
+            System.Console.WriteLine("Choose a movie: ");
+
+            string? movieInput;
+            movieInput = Console.ReadLine();
+            Console.WriteLine();
+
+            while (movieInput != "5")
+            {
+                int movieIndex;
+                if (int.TryParse(movieInput, out movieIndex) && movieIndex >= 1 && movieIndex <= movies.Length)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Loading...");
+                    System.Console.WriteLine();
+                    TitleAndSynopsis(movies[movieIndex - 1], synopses[movieIndex - 1]);
+                    System.Console.WriteLine();
+                    Console.WriteLine("Enjoy watching!");
+                    Console.WriteLine();
+                    return; 
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please try again");
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        static void TitleAndSynopsis(string movieTitle, string synopsis)
+        {
+            Console.WriteLine("Title: " + movieTitle);
+            System.Console.WriteLine();
+            Console.WriteLine("Synopsis: " + synopsis);
+        }
     }
-    
-    {
-      System.Console.WriteLine("Welcome to profile A!");
-      System.Console.WriteLine("");
-      System.Console.WriteLine("MOVIE GENRES:");
-      System.Console.WriteLine("1. Romance");
-      System.Console.WriteLine("2. Action");
-      System.Console.WriteLine("3. Horror");
-      System.Console.WriteLine("4. Science Fiction");
-      System.Console.WriteLine();
-      
-      System.Console.WriteLine("Select your chosen movie genre: ");
-      genreInput = Console.ReadLine();
-      System.Console.WriteLine("");
-
-    }
-
-    switch (genreInput)
-    {
-        case "1":
-        {
-        System.Console.WriteLine("ROMANCE MOVIES: ");
-        System.Console.WriteLine("1. Titanic");
-        System.Console.WriteLine("2. Twilight");
-        System.Console.WriteLine("3. Ghosted");
-        System.Console.WriteLine("4. 13 Going on 30");
-        System.Console.WriteLine("5. Return to Main Menu");
-        System.Console.WriteLine();
-
-            string? romanceInput;
-            romanceInput = Console.ReadLine();
-            System.Console.WriteLine();
-        
-        while (romanceInput == "5")
-        {
-          System.Console.WriteLine("MOVIE GENRES:");
-          System.Console.WriteLine("1. Romance");
-          System.Console.WriteLine("2. Action");
-          System.Console.WriteLine("3. Horror");
-          System.Console.WriteLine("4. Science Fiction");
-          System.Console.WriteLine();
-      
-          System.Console.WriteLine("Select your chosen movie genre: ");
-          genreInput = Console.ReadLine();
-          System.Console.WriteLine("");
-          break;
-        }
-        if (romanceInput == "1" || romanceInput == "2" || romanceInput == "3" || romanceInput == "4")
-        {
-          System.Console.WriteLine();
-          System.Console.WriteLine("Loading...");
-          System.Console.WriteLine("Enjoy watching!");
-          System.Console.WriteLine();
-          break;
-        }
-        else
-        {
-          System.Console.WriteLine("Invalid choice. Please try again");
-          System.Console.WriteLine();
-          System.Console.WriteLine("ROMANCE MOVIES: ");
-          System.Console.WriteLine("1. Titanic");
-          System.Console.WriteLine("2. Twilight");
-          System.Console.WriteLine("3. Ghosted");
-          System.Console.WriteLine("4. 13 Going on 30");
-          System.Console.WriteLine("5. Return to Main Menu");
-          System.Console.WriteLine();
-        }
-    
-      break;
-    }
-        case "2":
-        {
-            System.Console.WriteLine("ACTION MOVIES: ");
-            System.Console.WriteLine("1. Avengers: End Game");
-            System.Console.WriteLine("2. Justice League");
-            System.Console.WriteLine("3. Fast and Furious X");
-            System.Console.WriteLine("4. Uncharted");
-            System.Console.WriteLine("5. Return to Main Menu");
-            System.Console.WriteLine();
-
-            string? actionInput;
-            actionInput = Console.ReadLine();
-            System.Console.WriteLine();
-
-            while (actionInput == "5")
-        {
-          System.Console.WriteLine("MOVIE GENRES:");
-          System.Console.WriteLine("1. Romance");
-          System.Console.WriteLine("2. Action");
-          System.Console.WriteLine("3. Horror");
-          System.Console.WriteLine("4. Science Fiction");
-          System.Console.WriteLine();
-      
-          System.Console.WriteLine("Select your chosen movie genre: ");
-          genreInput = Console.ReadLine();
-          System.Console.WriteLine("");
-          break;
-        }
-        if (actionInput == "1" || actionInput == "2" || actionInput == "3" || actionInput == "4")
-        {
-          System.Console.WriteLine();
-          System.Console.WriteLine("Loading...");
-          System.Console.WriteLine("Enjoy watching!");
-          System.Console.WriteLine();
-          break;
-        }
-        else
-        {
-          System.Console.WriteLine("Invalid choice. Please try again");
-          System.Console.WriteLine();
-          System.Console.WriteLine("ACTION MOVIES: ");
-          System.Console.WriteLine("1. Avengers: End Game");
-          System.Console.WriteLine("2. Justice League");
-          System.Console.WriteLine("3. Fast and Furious X");
-          System.Console.WriteLine("4. Uncharted");
-          System.Console.WriteLine("5. Return to Main Menu");
-          System.Console.WriteLine();
-        }
-            break;
-        }
-        case "3":
-        {
-            System.Console.WriteLine("HORROR MOVIES: ");
-            System.Console.WriteLine("1. Insidious");
-            System.Console.WriteLine("2. Conjuring");
-            System.Console.WriteLine("3. The Exorcist");
-            System.Console.WriteLine("4. The Texas Chainsaw Massacre");
-            System.Console.WriteLine("5. Return to Main Menu");
-            System.Console.WriteLine();
-
-            string? horrorInput;
-            horrorInput = Console.ReadLine();
-            System.Console.WriteLine();
-      while (horrorInput == "5")
-        {
-          System.Console.WriteLine("MOVIE GENRES:");
-          System.Console.WriteLine("1. Romance");
-          System.Console.WriteLine("2. Action");
-          System.Console.WriteLine("3. Horror");
-          System.Console.WriteLine("4. Science Fiction");
-          System.Console.WriteLine();
-      
-          System.Console.WriteLine("Select your chosen movie genre: ");
-          genreInput = Console.ReadLine();
-          System.Console.WriteLine("");
-          break;
-        }
-        if (horrorInput == "1" || horrorInput == "2" || horrorInput == "3" || horrorInput == "4")
-        {
-          System.Console.WriteLine();
-          System.Console.WriteLine("Loading...");
-          System.Console.WriteLine("Enjoy watching!");
-          System.Console.WriteLine();
-          break;
-        }
-        else
-        {
-          System.Console.WriteLine("Invalid choice. Please try again");
-          System.Console.WriteLine();
-          System.Console.WriteLine("HORROR MOVIES: ");
-          System.Console.WriteLine("1. Insidious");
-          System.Console.WriteLine("2. Conjuring");
-          System.Console.WriteLine("3. The Exorcist");
-          System.Console.WriteLine("4. The Texas Chainsaw Massacre");
-          System.Console.WriteLine("5. Return to Main Menu");
-          System.Console.WriteLine();
-        }
-            break;
-        }
-        case "4":
-        {
-            System.Console.WriteLine("SCIENCE FICTION MOVIES: ");
-            System.Console.WriteLine("1. Pixels");
-            System.Console.WriteLine("2. Power Rangers");
-            System.Console.WriteLine("3. Spiderman: No Way Home");
-            System.Console.WriteLine("4. The Adam Project");
-            System.Console.WriteLine("5. Return to Main Menu");
-            System.Console.WriteLine();
-
-            string? scifiInput;
-            scifiInput = Console.ReadLine();
-            System.Console.WriteLine();
-        while (scifiInput == "5")
-        {
-          System.Console.WriteLine("MOVIE GENRES:");
-          System.Console.WriteLine("1. Romance");
-          System.Console.WriteLine("2. Action");
-          System.Console.WriteLine("3. Horror");
-          System.Console.WriteLine("4. Science Fiction");
-          System.Console.WriteLine();
-      
-          System.Console.WriteLine("Select your chosen movie genre: ");
-          genreInput = Console.ReadLine();
-          System.Console.WriteLine("");
-          break;
-        }
-        if (scifiInput == "1" || scifiInput == "2" || scifiInput == "3" || scifiInput == "4")
-        {
-          System.Console.WriteLine();
-          System.Console.WriteLine("Loading...");
-          System.Console.WriteLine("Enjoy watching!");
-          System.Console.WriteLine();
-          break;
-        }
-        else
-        {
-          System.Console.WriteLine("Invalid choice. Please try again");
-          System.Console.WriteLine();
-          System.Console.WriteLine("SCIENCE FICTION MOVIES: ");
-          System.Console.WriteLine("1. Pixels");
-          System.Console.WriteLine("2. Power Rangers");
-          System.Console.WriteLine("3. Spiderman: No Way Home");
-          System.Console.WriteLine("4. The Adam Project");
-          System.Console.WriteLine("5. Return to Main Menu");
-          System.Console.WriteLine();
-        }
-            break;
-        }
-        default:  
-            System.Console.WriteLine();
-            System.Console.WriteLine("Invalid input. Please try again.");
-            break;
-    }
-  }
-}
 }
