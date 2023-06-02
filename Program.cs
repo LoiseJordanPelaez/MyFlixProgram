@@ -13,7 +13,7 @@ namespace MyFlixProgram
         {
             Console.WriteLine("MYFLIX");
             Console.WriteLine();
-            Console.WriteLine("Welcome to Myddflix!");
+            Console.WriteLine("Welcome to Myflix!");
             Console.WriteLine("Profile A.");
             Console.WriteLine("Profile B.");
             Console.WriteLine("Profile C.");
