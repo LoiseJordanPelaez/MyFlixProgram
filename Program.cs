@@ -120,10 +120,11 @@ namespace MyFlixProgram
                 int movieIndex;
                 if (int.TryParse(movieInput, out movieIndex) && movieIndex >= 1 && movieIndex <= movies.Length)
                 {
+                    TitleAndSynopsis(movies[movieIndex - 1], synopses[movieIndex - 1]);
                     Console.WriteLine();
                     Console.WriteLine("Loading...");
                     System.Console.WriteLine();
-                    TitleAndSynopsis(movies[movieIndex - 1], synopses[movieIndex - 1]);
+                
                     System.Console.WriteLine();
                     Console.WriteLine("Enjoy watching!");
                     Console.WriteLine();
