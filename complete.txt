@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace MyFlixProgram
@@ -76,7 +76,7 @@ namespace MyFlixProgram
             {
                 Console.WriteLine((i + 1) + ". " + movies[i].Title);
             }
-            Console.WriteLine("0. Return to Main Menu");
+            Console.WriteLine("5. Return to Main Menu");
             Console.WriteLine();
             Console.WriteLine("Choose a movie: ");
 
@@ -84,7 +84,7 @@ namespace MyFlixProgram
             movieInput = Console.ReadLine();
             Console.WriteLine();
 
-            while (movieInput != "0")
+            while (movieInput != "5")
             {
                 int movieIndex;
                 if (int.TryParse(movieInput, out movieIndex) && movieIndex >= 1 && movieIndex <= movies.Count)
